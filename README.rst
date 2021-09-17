@@ -5,7 +5,12 @@ a toy gemini client written in ansi c (c89).
 
 nowhere near finished, but it works! (*mostly*).
 
-Limitations
+what works ?
+------------
+
+everything **except** the custom ui.
+
+limitations
 -----------
 
 - \*nix only
