@@ -168,3 +168,18 @@ int VIV_exit(int exit_code, const char *format, ...) {
 
   return print_result;
 }
+
+void VIV_split(const char *string, char separator, split_fn function, void *data) {
+  unsigned int start, stop;
+
+  start, stop = 0;
+
+  for (stop = 0; string[stop]; ++stop) {
+    if (string[stop] == separator) {
+      function(string + start, stop - start, data);
+      start = stop + 1;
+    }
+  }
+
+  function(string + start, stop - start, data);
+}
