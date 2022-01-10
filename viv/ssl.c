@@ -8,9 +8,11 @@
 #include <netdb.h>
 #include <openssl/err.h>
 #include <string.h>
+#include <strings.h>
 #include <unistd.h>
 
 #include "viv/log.h"
+#include "viv/viv.h"
 
 VIV_SSL_connection_context VIV_SSL_open_connection(const char **hostname, int port) {
   VIV_SSL_connection_context connection_context;
@@ -31,7 +33,7 @@ VIV_SSL_connection_context VIV_SSL_open_connection(const char **hostname, int po
   }
 
   connection_context.socket = socket(PF_INET, SOCK_STREAM, 0);
-  bzero(&addr, sizeof(addr));
+  memset(&addr, 0, sizeof(addr)); /* bzero(&addr, sizeof(addr)); */
   addr.sin_family = AF_INET;
   addr.sin_port = htons(port);
   addr.sin_addr.s_addr = *(long *)(host->h_addr);

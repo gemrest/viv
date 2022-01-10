@@ -6,6 +6,9 @@
 
 #pragma once
 
+/* https://stackoverflow.com/a/11405862/14452787 */
+#define h_addr h_addr_list[0]
+
 #include <openssl/ssl.h>
 
 /* Definitions within this header will be prefixed by VIV_SSL opposed to just

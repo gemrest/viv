@@ -5,6 +5,8 @@
 #ifndef FLAG_H_
 #define FLAG_H_
 
+#define static_assert _Static_assert
+
 #include <assert.h>
 #include <stdio.h>
 #include <stdlib.h>

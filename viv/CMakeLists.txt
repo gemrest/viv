@@ -12,26 +12,28 @@ target_include_directories(${PROJECT_NAME} PRIVATE ${PROJECT_SOURCE_DIR}/include
 
 set_target_properties(${PROJECT_NAME} PROPERTIES
   CMAKE_C_STANDARD_REQUIRED ON
-  CMAKE_C_STANDARD          89
+  CMAKE_C_STANDARD          99
   CMAKE_C_EXTENSIONS        OFF
 )
 
-add_compile_options(
-  -std=c89
-  -ansi
+target_compile_options(${PROJECT_NAME} PUBLIC
+  -std=c99
+  # -ansi
   -Wall
   -Wextra
-  -Werror
+  # -Werror=pedantic
   -Wno-unused-function
-  -pedantic
-  -pedantic-errors
+  # -Wpedantic
+  # -pedantic
+  # -pedantic-errors
   -march=native
-  -03
+  # -03
   -D_XOPEN_SOURCE=500
   -D_POSIX_C_SOURCE=200112L
   -g
   -fsanitize=address
 )
+target_link_options(${PROJECT_NAME} PUBLIC -fsanitize=address)
 
 find_package(OpenSSL REQUIRED)
 target_link_libraries(${PROJECT_NAME} PRIVATE

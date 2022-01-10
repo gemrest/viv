@@ -8,11 +8,11 @@
 
 #include <stdio.h>
 
-static const char *CLI_help = "usage: %s [option] <hostname> [port]\n"
+/* static const char *CLI_help = "usage: %s [option] <hostname> [port]\n"
                                   "options:\n"
                                   "  -c, --cert     print the received certificates\n"
                                   "  -h, --help     you are here\n"
-                                  "  -v, --version  print viv's version information\n";
+                                  "  -v, --version  print viv's version information\n"; */
 
 typedef enum {
   CLI_option_SHOW_CERTS  = (1 << 0),

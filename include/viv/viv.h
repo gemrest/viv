@@ -8,10 +8,12 @@
 
 typedef void(*split_fn)(const char *, int, void *);
 
-static const char *VIV_version = "1.0.0";
+/* static const char *VIV_version = "1.0.0"; */
 
 int VIV_exit(int, const char *, ...);
 /* http://www.martinbroadhurst.com/split-a-string-in-c.html */
 void VIV_split(const char *, char, split_fn, void *);
+
+char *strsep(char **__restrict, const char *__restrict);
 
 #endif /* VIV_VIV_H */
