@@ -48,7 +48,7 @@ char *choices[] = {
 };
 
 void UI_initialise(void) {
-  int height, width, i;
+  // int height, width, i;
   WINDOW *window;
   ITEM **window_items;
   MENU *menu;
@@ -109,6 +109,9 @@ void UI_initialise(void) {
       } break;
       case KEY_LEFT: {
         menu_driver(menu, REQ_SCR_UPAGE);
+      } break;
+      default: {
+        /* ignore */
       } break;
     }
   }
