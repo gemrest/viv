@@ -18,14 +18,14 @@ int VIV_LOG_log(VIV_LOG_level level, const char *format, ...) {
 
   log_file = stdout;
 
-  if      (level & VIV_LOG_level_TRACE)   { strcpy(log_format, "[trace] "); }
-  else if (level & VIV_LOG_level_DEBUG) { strcpy(log_format, "[debug] "); }
-  else if (level & VIV_LOG_level_INFO)  { strcpy(log_format, "[info]  "); }
+  if      (level & VIV_LOG_level_TRACE) { strcpy(log_format, KMAG "[trace] " KNRM); }
+  else if (level & VIV_LOG_level_DEBUG) { strcpy(log_format, KCYN "[debug] " KNRM); }
+  else if (level & VIV_LOG_level_INFO)  { strcpy(log_format, KGRN "[info]  " KNRM); }
   else if (level & VIV_LOG_level_WARN)  {
-    strcpy(log_format, "[warn]  ");
+    strcpy(log_format, KYEL "[warn]  " KNRM);
     log_file = stderr;
   } else if (level & VIV_LOG_level_ERROR) {
-    strcpy(log_format, "[error] ");
+    strcpy(log_format, KRED "[error] " KNRM);
     log_file = stderr;
   }
 
