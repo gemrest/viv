@@ -14,7 +14,7 @@ void UI_initialise(char *content[], int content_length) {
   ITEM **window_items;
   MENU *menu;
   int character;
-  int max_y;
+  int max_x, max_y;
 
   initscr();
   start_color();
@@ -26,6 +26,7 @@ void UI_initialise(char *content[], int content_length) {
 
   window_items = (ITEM **)calloc(content_length, sizeof(ITEM *));
   max_y = getmaxy(stdscr);
+  max_x = getmaxx(stdscr);
 
   for (int i = 0; i < content_length; ++i) {
     window_items[i] = new_item(content[i], content[i]);
@@ -33,11 +34,11 @@ void UI_initialise(char *content[], int content_length) {
 
   menu = new_menu((ITEM **)window_items);
 
-  window = newwin(max_y, 60, 0, 0);
+  window = newwin(max_y, max_x, 0, 0);
   keypad(window, TRUE);
 
   set_menu_win(menu, window);
-  set_menu_sub(menu, derwin(window, max_y - 2, 60, 0, 0));
+  set_menu_sub(menu, derwin(window, max_y - 2, max_x, 0, 0));
   set_menu_format(menu, max_y - 2, 1);
   set_menu_mark(menu, "");
 
