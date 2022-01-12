@@ -13,6 +13,7 @@ typedef void(*split_fn)(const char *, int, void *);
 int VIV_exit(int, const char *, ...);
 /* http://www.martinbroadhurst.com/split-a-string-in-c.html */
 void VIV_split(const char *, char, split_fn, void *);
+void VIV_add_to_dynamic_array(const char *, int, void *);
 
 char *strsep(char **__restrict, const char *__restrict);
 

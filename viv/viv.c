@@ -10,6 +10,7 @@
 #include <string.h>
 #include <unistd.h>
 
+#include "viv/dynamic_array.h"
 #include "viv/cli.h"
 #include "viv/gemini.h"
 #include "viv/log.h"
@@ -141,15 +142,36 @@ int main(int argc, char *argv[]) {
     gemini_ctx.content
   )
 
+  VIV_DYNAMIC_ARRAY_dynamic_array *array = VIV_DYNAMIC_ARRAY_create(0);
+
+  VIV_split(gemini_ctx.content, '\n', VIV_add_to_dynamic_array, array);
+
+  char *lines[VIV_DYNAMIC_ARRAY_get_count(array)];
+
+  for (int i = 0; i < (int)VIV_DYNAMIC_ARRAY_get_count(array); ++i) {
+    lines[i] = VIV_DYNAMIC_ARRAY_get(array, i);
+
+    if (strlen(lines[i]) > 1) {
+      lines[i][strlen(lines[i]) - 1] = 0;
+      if (lines[i][strlen(lines[i]) - 1] == '\r') {
+        lines[i][strlen(lines[i]) - 1] = ' ';
+      }
+    } else if (strlen(lines[i]) == 1) {
+      lines[i] = " ";
+    }
+  }
+
+  UI_initialise(lines, (int)(sizeof(lines) / sizeof(*lines)));
+
+  VIV_DYNAMIC_ARRAY_for_each(array, free);
+  VIV_DYNAMIC_ARRAY_delete(array);
+
   close(connection_context.socket);
   SSL_CTX_free(ssl_context);
   ERR_free_strings();
   EVP_cleanup();
 
   free(gemini_ctx.header.header);
-
-  /* ui.c testing */
-  /* UI_initialise(); */
 
   return EXIT_SUCCESS;
 }
@@ -199,4 +221,13 @@ char *strsep(char **__restrict stringp, const char *__restrict delim) {
   }
 
   return rv;
+}
+
+void VIV_add_to_dynamic_array(const char *string, int length, void *data) {
+  VIV_DYNAMIC_ARRAY_dynamic_array *array = data;
+  char *token = calloc(length + 1, 1);
+
+  memcpy(token, string, length);
+
+  VIV_DYNAMIC_ARRAY_add_tail(array, token);
 }
