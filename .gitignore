@@ -3,3 +3,4 @@
 
 # CMake
 /cmake-build-*
+/build/
