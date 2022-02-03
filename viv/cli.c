@@ -1,14 +1,14 @@
 /* Copyright (C) 2021-2021 Fuwn
  * SPDX-License-Identifier: GPL-3.0-only */
 
-#include "viv/cli.h"
+#include <viv/cli.h>
 
 #include <stdlib.h>
 
-#include "viv/flag.h"
-#include "viv/gemini.h"
-#include "viv/log.h"
-#include "viv/viv.h"
+#include <viv/flag.h>
+#include <viv/gemini.h>
+#include <viv/log.h>
+#include <viv/viv.h>
 
 CLI_handle CLI_cli(int argc, const char *argv[]) {
   CLI_handle cli_handle;

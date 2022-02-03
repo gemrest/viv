@@ -3,4 +3,4 @@
 
 #define FLAG_IMPLEMENTATION
 
-#include "viv/flag.h"
+#include <viv/flag.h>

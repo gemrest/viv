@@ -3,7 +3,7 @@
 
 /* NOTE: This source file contains *lots* of filler and testing code! */
 
-#include "viv/ui.h"
+#include <viv/ui.h>
 
 #include <menu.h>
 #include <stdlib.h>

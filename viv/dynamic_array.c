@@ -1,6 +1,6 @@
 /* http://www.martinbroadhurst.com/dynamic-array-in-c.html */
 
-#include "viv/dynamic_array.h"
+#include <viv/dynamic_array.h>
 
 #include <stdlib.h>
 #include <string.h>

@@ -1,13 +1,13 @@
 /* Copyright (C) 2021-2021 Fuwn
  * SPDX-License-Identifier: GPL-3.0-only */
 
-#include "viv/gemini.h"
+#include <viv/gemini.h>
 
 #include <stdlib.h>
 #include <string.h>
 
-#include "viv/log.h"
-#include "viv/viv.h"
+#include <viv/log.h>
+#include <viv/viv.h>
 
 void GEMINI_parse_header(
   const char *header,

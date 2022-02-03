@@ -1,7 +1,7 @@
 /* Copyright (C) 2021-2021 Fuwn
  * SPDX-License-Identifier: GPL-3.0-only */
 
-#include "viv/ssl.h"
+#include <viv/ssl.h>
 
 #include <arpa/inet.h>
 #include <malloc.h>
@@ -11,8 +11,8 @@
 #include <strings.h>
 #include <unistd.h>
 
-#include "viv/log.h"
-#include "viv/viv.h"
+#include <viv/log.h>
+#include <viv/viv.h>
 
 VIV_SSL_connection_context VIV_SSL_open_connection(const char **hostname, int port) {
   VIV_SSL_connection_context connection_context;

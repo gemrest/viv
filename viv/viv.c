@@ -1,7 +1,7 @@
 /* Copyright (C) 2021-2021 Fuwn
  * SPDX-License-Identifier: GPL-3.0-only */
 
-#include "viv/viv.h"
+#include <viv/viv.h>
 
 #include <stdbool.h>
 #include <netdb.h>
@@ -10,12 +10,12 @@
 #include <string.h>
 #include <unistd.h>
 
-#include "viv/dynamic_array.h"
-#include "viv/cli.h"
-#include "viv/gemini.h"
-#include "viv/log.h"
-#include "viv/ssl.h"
-#include "viv/ui.h"
+#include <viv/dynamic_array.h>
+#include <viv/cli.h>
+#include <viv/gemini.h>
+#include <viv/log.h>
+#include <viv/ssl.h>
+#include <viv/ui.h>
 
 int main(int argc, char *argv[]) {
   CLI_handle cli_handle;
