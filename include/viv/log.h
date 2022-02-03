@@ -3,7 +3,6 @@
 
 #ifndef VIV_LOG_H
 #define VIV_LOG_H
-
 #pragma once
 
 #define KNRM  "\x1B[0m"

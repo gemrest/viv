@@ -3,7 +3,6 @@
 
 #ifndef VIV_SSL_H
 #define VIV_SSL_H
-
 #pragma once
 
 /* https://stackoverflow.com/a/11405862/14452787 */

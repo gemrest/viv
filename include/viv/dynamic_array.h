@@ -2,7 +2,6 @@
 
 #ifndef VIV_DYNAMIC_ARRAY_H
 #define VIV_DYNAMIC_ARRAY_H
-
 #pragma once
 
 typedef struct {
