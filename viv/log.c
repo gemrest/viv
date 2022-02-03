@@ -1,14 +1,14 @@
 /* Copyright (C) 2021-2021 Fuwn
  * SPDX-License-Identifier: GPL-3.0-only */
 
-#include "viv/log.h"
+#include <viv/log.h>
 
 #include <stdarg.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 
-#include "viv/viv.h"
+#include <viv/viv.h>
 
 int VIV_LOG_log(VIV_LOG_level level, const char *format, ...) {
   FILE *log_file;
