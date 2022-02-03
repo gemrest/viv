@@ -21,7 +21,7 @@ target_compile_options(${PROJECT_NAME} PUBLIC
   # -ansi
   -Wall
   -Wextra
-  # -Werror=pedantic
+  -Werror # =pedantic
   -Wno-unused-function
   # -Wpedantic
   # -pedantic
