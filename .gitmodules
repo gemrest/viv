@@ -1,0 +1,3 @@
+[submodule "deps/flag"]
+	path = deps/flag
+	url = https://github.com/Fuwn/flag.h

@@ -20,7 +20,7 @@ Curses = { required = true }
 [target.viv]
 type = "executable"
 sources = ["viv/*.c"]
-private-include-directories = ["include/"]
+private-include-directories = ["include/", "deps/"]
 properties = { CMAKE_C_STANDARD_REQUIRED = true, CMAKE_C_STANDARD = "99", CMAKE_C_EXTENSIONS = false, CURSES_NEED_NCURSES = true }
 compile-options = ["-std=c99", "-Wall", "-Wextra", "-Werror=pedantic", "-Wno-unused-function", "-Wpedantic", "-pedantic-errors", "-march=native", "-D_XOPEN_SOURCE=500"] # -03, -fsanitize=address
 link-options = ["-fsanitize=address"]
