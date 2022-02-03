@@ -33,6 +33,7 @@ VIV_SSL_connection_context VIV_SSL_open_connection(const char **hostname, int po
   }
 
   connection_context.socket = socket(PF_INET, SOCK_STREAM, 0);
+  /* https://stackoverflow.com/a/37129097/14452787 */
   memset(&addr, 0, sizeof(addr)); /* bzero(&addr, sizeof(addr)); */
   addr.sin_family = AF_INET;
   addr.sin_port = htons(port);
