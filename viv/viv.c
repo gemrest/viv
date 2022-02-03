@@ -198,12 +198,12 @@ void VIV_split(const char *string, char separator, split_fn function, void *data
 
   for (stop = 0; string[stop]; ++stop) {
     if (string[stop] == separator) {
-      function(string + start, stop - start, data);
+      function(string + start, (int)(stop - start), data);
       start = stop + 1;
     }
   }
 
-  function(string + start, stop - start, data);
+  function(string + start, (int)(stop - start), data);
 }
 
 /* https://stackoverflow.com/a/58244503/14452787 */
