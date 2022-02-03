@@ -7,7 +7,7 @@ cmkr-include = "cmake/cmkr/cmkr.cmake"
 [project]
 name = "viv"
 version = "0.1.0"
-description = ""
+description = "🎀 toy gemini client in ansi c (c99)"
 languages = ["C"]
 
 [conditions]
