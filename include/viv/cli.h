@@ -3,7 +3,6 @@
 
 #ifndef VIV_CLI_H
 #define VIV_CLI_H
-
 #pragma once
 
 #include <stdio.h>

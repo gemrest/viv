@@ -3,7 +3,6 @@
 
 #ifndef VIV_UI_H
 #define VIV_UI_H
-
 #pragma once
 
 #include <curses.h>

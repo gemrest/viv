@@ -3,7 +3,6 @@
 
 #ifndef VIV_GEMINI_H
 #define VIV_GEMINI_H
-
 #pragma once
 
 static const int GEMINI_port = 1965;

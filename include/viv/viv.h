@@ -3,7 +3,6 @@
 
 #ifndef VIV_VIV_H
 #define VIV_VIV_H
-
 #pragma once
 
 typedef void(*split_fn)(const char *, int, void *);
