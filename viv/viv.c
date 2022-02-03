@@ -172,7 +172,7 @@ int VIV_exit(int exit_code, const char *format, ...) {
 void VIV_split(const char *string, char separator, split_fn function, void *data) {
   unsigned int start, stop;
 
-  start, stop = 0;
+  start = 0;
 
   for (stop = 0; string[stop]; ++stop) {
     if (string[stop] == separator) {
@@ -182,4 +182,21 @@ void VIV_split(const char *string, char separator, split_fn function, void *data
   }
 
   function(string + start, stop - start, data);
+}
+
+/* https://stackoverflow.com/a/58244503/14452787 */
+char *strsep(char **__restrict stringp, const char *__restrict delim) {
+  char *rv = *stringp;
+
+  if (rv) {
+    *stringp += strcspn(*stringp, delim);
+
+    if (**stringp) {
+      *(*stringp)++ = '\0';
+    } else {
+      *stringp = 0;
+    }
+  }
+
+  return rv;
 }
