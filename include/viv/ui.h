@@ -8,8 +8,8 @@
 
 #include <curses.h>
 
-void UI_initialise(void);
+void UI_initialise(char *[], int);
 /* void UI_free(void); */
-void UI_print_in_middle(WINDOW *, int, int, int, char *, chtype);
+/* void UI_print_in_middle(WINDOW *, int, int, int, char *, chtype); */
 
 #endif /* VIV_UI_H */
