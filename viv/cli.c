@@ -5,10 +5,12 @@
 
 #include <stdlib.h>
 
-#include <viv/flag.h>
 #include <viv/gemini.h>
 #include <viv/log.h>
 #include <viv/viv.h>
+
+#define FLAG_IMPLEMENTATION
+#include <flag/flag.h>
 
 CLI_handle CLI_cli(int argc, const char *argv[]) {
   CLI_handle cli_handle;

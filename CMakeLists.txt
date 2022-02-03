@@ -32,6 +32,8 @@ project(viv
 		C
 	VERSION
 		0.1.0
+	DESCRIPTION
+		"🎀 toy gemini client in ansi c (c99)"
 )
 
 # Packages
@@ -46,7 +48,6 @@ set(viv_SOURCES "")
 list(APPEND viv_SOURCES
 	"viv/cli.c"
 	"viv/dynamic_array.c"
-	"viv/flag.c"
 	"viv/gemini.c"
 	"viv/log.c"
 	"viv/ssl.c"
@@ -86,6 +87,7 @@ target_compile_options(viv PRIVATE
 
 target_include_directories(viv PRIVATE
 	"include/"
+	"deps/"
 )
 
 if(CURSES_FOUND AND CURSES_HAVE_NCURSES_H) # curses
