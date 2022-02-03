@@ -13,7 +13,7 @@
 CLI_handle CLI_cli(int argc, const char *argv[]) {
   CLI_handle cli_handle;
 
-  cli_handle.options = 0b0000;
+  cli_handle.options = 0x0; /* 0b0000 */
 
   bool *help = flag_bool(
     "help",

@@ -19,22 +19,18 @@ set_target_properties(${PROJECT_NAME} PROPERTIES
 
 target_compile_options(${PROJECT_NAME} PUBLIC
   -std=c99
-  # -ansi
   -Wall
   -Wextra
-  -Werror # =pedantic
+  -Werror=pedantic
   -Wno-unused-function
-  # -Wpedantic
-  # -pedantic
-  # -pedantic-errors
+  -Wpedantic
+  -pedantic-errors
   -march=native
   # -03
   -D_XOPEN_SOURCE=500
-  -D_POSIX_C_SOURCE=200112L
-  -g
-  -fsanitize=address
+  # -fsanitize=address
 )
-target_link_options(${PROJECT_NAME} PUBLIC -fsanitize=address)
+# target_link_options(${PROJECT_NAME} PUBLIC -fsanitize=address)
 
 find_package(OpenSSL REQUIRED)
 target_link_libraries(${PROJECT_NAME} PRIVATE
