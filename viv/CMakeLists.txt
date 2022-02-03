@@ -1,5 +1,6 @@
 add_executable(${PROJECT_NAME}
   cli.c
+  dynamic_array.c
   gemini.c
   flag.c
   log.c
